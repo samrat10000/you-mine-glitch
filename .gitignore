@@ -1,0 +1,22 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Heavy regenerable frame caches (~2.5 GB) and intermediate probe folders
+you-are-my-world/ep1/**/comp/
+you-are-my-world/ep1/**/cel/*.png
+!you-are-my-world/ep1/**/cel/meta.json
+you-are-my-world/ep1/**/probe_*/
+you-are-my-world/ep1/01_hilltop/v1/qa/crop_*.png
+
+# Master CRF-14 MP4s (>70-113 MiB, exceeds GitHub 100 MiB blob limit)
+# Keep *_IG.mp4 (<65 MiB faststart) tracked for instant visual review!
+you-are-my-world/ep1/**/*_v[0-9].mp4
+!you-are-my-world/ep1/**/*_IG.mp4

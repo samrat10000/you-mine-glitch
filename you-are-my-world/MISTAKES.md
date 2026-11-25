@@ -1,0 +1,30 @@
+# MISTAKES: you-are-my-world (Inherited + Project Trap Log)
+
+Inherited critical traps from `motion2d/MISTAKES.md`:
+- Never use organic primitives for human bodies/limbs/faces (use CC0 MakeHuman `base.obj` + skeleton + LBS weights).
+- Never render blobby/box garments or hair; sculpt pleated skirts, relaxed jacket folds, and tapered multi-strand hair ribbons.
+- Never ignore hand grip / IK reach (`err <= 2.0 cm`) or foot grounding (`Z = 0 +- 0.5 cm`) — always inspect 1:1 full-size crops before full renders.
+- Never use generic Perlin fog for clouds — sculpt overlapping cauliflower cumulus domes with domain-warped FBM edges and directional self-shadowing.
+- Keep `scipy`-free pure-NumPy separable 1D Gaussian blur in float32 (zero 8-bit banding, zero external installs).
+- Keep all motions strictly periodic over `240` frames (`phi = 2*pi*(f-1)/240`) so Frame 240 -> Frame 1 has zero jump seam.
+
+## Project-specific findings
+- `2026-11-25`: Verified MakeHuman `universal-female-young-averagemuscle-averageweight.target` is empty (neutral base) while `female-young-averagemuscle-averageweight-maxheight.target` boosts height to `2.388 m`. Switched Girl morph to `universal-female-young-minmuscle-minweight.target` (`1.67 m` slender female) scaled cleanly to `1.62 m`.
+- `2026-11-25`: Verified `scipy` is absent in this Python 3.14 environment (`numpy 2.5.4`, `pillow 13.0.0`, `ffmpeg 9.1` present) and all `13,380` `body` vertices in `base.obj` are `100%` weight-bound (`0` unbound) across `13,378` quad faces.
+- `2026-11-25` (**v1 Rejection Root-Cause Analysis — Director: "totally looks made of AI"**):
+  1. **Unwanted head-scratching action:** Raising Girl's left wrist with `tuck_lift` to her temple read as an awkward repetitive head-scratch rather than a tender wind-blown hair moment -> **permanently removed**.
+  2. **MakeHuman A-pose leg bone trap:** In MakeHuman rest pose (`default.mhskel`), `upperleg01` slopes `+4.7 cm` outward (`x=0.108 -> 0.155`) and `lowerleg01` slopes another `+6.2 cm` outward (`x=0.155 -> 0.217`, ankles `43.4 cm` apart!). Rotating only `upperleg01` Z by `+-10 deg` produced `)(` knock-knees and rolled splayed "duck" feet/wedge shoes -> **fix via analytic 2-bone `solve_leg_ik` + world-flat foot leveling + tapered calves + minimal shoe contour**.
+  3. **Stiff geometric cone skirt & wing-like hair tubes:** 24 uniform `cos(24*th)` pleats formed a rigid lampshade cone (`z=1.03..0.56`) and straight side/back hair tubes flared like spiky angel wings -> **fix via irregular multi-harmonic flowing sundress draped downwind + gravity-first curved hair veil**.
+  4. **AI-looking seated Boy posture & proportions:** `b_root_yaw = 120` in full sideways kneeling profile with `spine05` vertical, stretched far arm, tiny smooth MakeHuman head, `smooth_iters=14` over-smoothed tight jacket, and sparse curls looked unmistakably artificial -> **fix via cozy 3/4 back view (`yaw ~ 148 deg`) right beside Girl, `1.10x` youthful head proportion, sculpted collar & low-smooth back folds (`smooth_iters=3`), full 56-tuft tousled curls, and hips hidden behind the hilltop grass knoll**.
+  5. **Sterile uniform `5x5` square CRT checkerboard:** Sharp digital `d_cell` squares across Boy's entire torso/face looked like a digital AI filter -> **fix via staggered, jittered hexagonal analog CRT phosphor stipples concentrated on Chiaroscuro lit folds + deep velvet shadow back + 12 fps contour boil**.
+  6. **Artificial triangle cloud & identical `+` crosshair stars:** Single mounded cumulus envelope with mid-frequency Perlin blotches and 9 giant mathematical `+` stars screamed synthetic CG/AI -> **fix via local 3D dome-normal sculpted clouds with deep indigo sky coves, delicate pinpoint stars + needle shooting stars, and atmospheric twilight meadow reeds**.
+- `2026-11-25` (**v3 Photographic Realism & Particle/Glitch Root-Cause Traps Resolved**):
+  1. **2D-only raymarch hollow dark cloud center & Voronoi `np.maximum` lobe creases:** Marching 320 px through a thick 2D density slab drove interior transmission to zero (creating a flat muddy center hole), while combining cloud lobes with `np.maximum` and relief ridges with `1.0 - abs(fbm)` introduced discontinuous V-crease lines (`|\`) -> **fix via C-infinity `Lp-7` smooth-max lobe blending, smooth soft-abs `1 - sqrt(n^2 + 0.16)` cauliflower domes, and 3D heightfield `_march_3d` (stepping in `+Z` toward horizon sun, night sky dome, and Girl front point light)**.
+  2. **Milky Way `rng.random**10` sandpaper static & cirrus specks:** Pixel-level high-power random noise and high-frequency `ridged` cirrus looked like digital dirt -> **fix via multi-scale blurred galactic star-clouds (`sigma=1.2`) + sharp `0.52 px` stellar PSF cores and `2.2 px` bright-star halos**.
+  3. **Detached floating grass seed heads & wrap-around glitch ticks:** Tapering upper oat stems to `0.15 px` at 2x SSAA caused stems to vanish upon Lanczos downsample while spikelets remained as floating dots; and `np.roll` during wide horizontal glitch tears wrapped Girl/sky pixels across left/right frame borders -> **fix via `min_hw=0.95*ss` stems with a continuous connected central rachis strip in `_seed_head`, and `_shift_x_clamp` edge-clamping in `_glitch`**.
+  4. **Over-blurred heavy film grain fighting glitter & breaking loop seam:** `gauss_blur(0.75)*2.6` at `amp=0.11` raised `MAE(240,001)` to `0.04077` (`> 0.030`) and swamped sub-pixel Girl sparkles -> **fix via crisp `0.38 px` silver-halide optical grain (`amp = 0.007 + 0.036*Lm*(1-Lm)`) yielding `MAE(240,001) = 0.01843` alongside high-contrast `0.55 px` crystal glints**.
+  5. **Remaining `v3` Weaknesses Handed Off to Codex (`v4`):** See root `../CODEX_MISTAKES_AND_HANDOFF.md` for the full 17-mistake post-mortem and `v4` upgrade roadmap (Girl interior fold/finger grain separation + curl-noise particles, Boy right-arm smooth 3D CG rim breakup, `LOBES_FAR[0]` detached top puff removal + Worley-eroded volumetric clouds, multi-plane grass wind parallax, and localized quantum-prism glitch art direction).
+
+
+
+

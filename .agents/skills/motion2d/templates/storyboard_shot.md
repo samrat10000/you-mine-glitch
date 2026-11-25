@@ -1,0 +1,11 @@
+## NN name (start-end s, duration)
+- Act:
+- Camera: lens __ mm, height __ m, move (push/track/handheld/whip), framing (subject third, sun position)
+- What moves: (every character, loose element, light, particle)
+- Wow detail: (visible >= 12 frames)
+- Hands/feet contacts to check: (object, which hand, grip type)
+- Real references needed: (photos in refs/)
+- How it's built: (reuse which set/builder, cast blends, special passes)
+- Line(s): time, who, line
+- SFX:
+- Cut in / cut out: (match, continuity contract: light, time, costume, direction, speed)

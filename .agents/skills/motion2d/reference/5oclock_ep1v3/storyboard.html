@@ -1,0 +1,262 @@
+<title>5 O'CLOCK Episode 1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: a single vertical "film strip" of shot cards on a dusk-to-night ground, timeline bar on top, script and cast below. Deliberately one dark look: the town after 5 PM. */
+:root{
+  --dusk:#1a1420;      /* page ground, sky just after sunset */
+  --panel:#241c2b;     /* shot card */
+  --ink:#f3e9dc;       /* paper-white text */
+  --muted:#b7a99c;     /* secondary text */
+  --sun:#f29a4a;       /* 5 PM sunset orange */
+  --signal:#e2402f;    /* the one red accent: radio-tower light, mirror pole */
+  --night:#5d7bb3;     /* mirror-side blue */
+  --line:#3a2f40;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  color-scheme:dark;
+}
+body{background:var(--dusk);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,7vw,60px);line-height:1.05;letter-spacing:.01em}
+h1 .jp{display:block;font-size:.42em;color:var(--sun);letter-spacing:.3em;margin-bottom:10px}
+h2{font-size:26px;margin:52px 0 14px}
+.log{font-size:clamp(17px,2.4vw,21px);max-width:62ch;margin:16px 0 0;color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 11px;color:var(--muted)}
+.chip b{color:var(--ink);font-weight:700}
+p{max-width:68ch}
+.muted{color:var(--muted)}
+/* timeline */
+.tl{display:flex;height:34px;border-radius:6px;overflow:hidden;margin-top:26px;border:1px solid var(--line)}
+.tl a{display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink);text-decoration:none;border-right:1px solid var(--dusk);min-width:0}
+.tl a:focus-visible{outline:2px solid var(--sun);outline-offset:-2px}
+.acts{display:flex;font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.06em;text-transform:uppercase}
+.acts span{border-left:1px solid var(--line);padding-left:6px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+/* shots */
+.act{font-family:var(--display);color:var(--sun);font-size:15px;letter-spacing:.2em;text-transform:uppercase;margin:44px 0 12px}
+.shot{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;background:var(--panel);border-radius:10px;padding:14px;margin-bottom:12px;scroll-margin-top:20px}
+.shot canvas{width:150px;height:auto;aspect-ratio:9/16;border-radius:6px;display:block;max-width:100%}
+.shot h3{font-size:20px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.num{font-family:var(--body);font-size:13px;color:var(--signal);font-weight:700;letter-spacing:.06em}
+.time{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;font-family:var(--body);font-weight:400}
+.shot p{margin:6px 0}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.line{border-left:2px solid var(--sun);padding-left:10px;margin:8px 0;font-size:15px}
+.line.n{border-color:var(--muted)}
+.line.m{border-color:var(--night)}
+.who{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block}
+.wow{color:var(--sun)}
+@media (max-width:560px){.shot{grid-template-columns:96px minmax(0,1fr);gap:12px}.shot canvas{width:96px}}
+/* cast */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.card{background:var(--panel);border-radius:10px;padding:16px}
+.card h3{font-size:19px;margin-bottom:6px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tw{overflow-x:auto}
+td,th{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.t{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+ol.steps{padding-left:20px;max-width:68ch}
+ol.steps li{margin-bottom:8px}
+@media (prefers-reduced-motion:no-preference){.tl a{transition:filter .15s}.tl a:hover{filter:brightness(1.25)}}
+</style>
+
+<div class="wrap">
+<header>
+  <h1><span class="jp">五時のチャイム</span>5 O'CLOCK<br>Episode 1: The Fourth Note</h1>
+  <p class="log">Every town in Japan plays a song at five o'clock. Kiriyama's has four notes. Today it stops after three, and Sam, the only one wearing headphones, is the only one who notices which side of the mirror he's on.</p>
+  <div class="meta">
+    <span class="chip"><b>63 s</b> · 9:16 vertical</span>
+    <span class="chip"><b>18</b> shots</span>
+    <span class="chip">Voices: narrator, Sam, mirror-Sam, Grandma Hoshino</span>
+    <span class="chip">Music + voice added after the animation is locked</span>
+  </div>
+  <nav class="tl" id="tl" aria-label="Shot timeline"></nav>
+  <div class="acts" id="acts"></div>
+</header>
+
+<main id="shots"></main>
+
+<section>
+  <h2>Full dialogue script</h2>
+  <p class="muted">Sparse on purpose: 11 lines in 63 seconds, so the pictures carry it. Recorded and mixed only after every shot is approved. The music thins under each line and swells back in the gaps.</p>
+  <div class="tw"><table id="script"><thead><tr><th>Time</th><th>Shot</th><th>Who</th><th>Line</th><th>How it's said</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section>
+  <h2>Cast and world</h2>
+  <div class="grid">
+    <div class="card"><h3>Sam, 17</h3><p>Lean, narrow shoulders, slightly too-long hair, big over-ear headphones, oversized grey hoodie with the strings uneven, konbini bag on the handlebar. Quiet, a little sarcastic. Loses something every episode.</p></div>
+    <div class="card"><h3>Mirror-Sam</h3><p>Identical, except his hair parts the other way, the hoodie strings are swapped, and his pupils never quite catch the light. He moves a half beat early. He has been waiting for Sam a long time.</p></div>
+    <div class="card"><h3>Grandma Hoshino</h3><p>Runs the tobacco and sweets shop on the corner. Tiny, bent, sharp eyes, bamboo broom. She knows the rules and has followed them for 62 years. She's the one who tried to warn him.</p></div>
+    <div class="card"><h3>The Listener</h3><p>A colossal shape on the other side of the sky, taller than the mountain. Its head is a crown of hundreds of rusted Showa-era loudspeaker horns that all turn together, like a field of sunflowers following a sound. Long arms with too many joints. It learned the song.</p></div>
+    <div class="card"><h3>The townsfolk</h3><p>Kids with randoseru backpacks, a salaryman on his phone, a girl on a bike, the shopkeeper pulling his shutter. Each one has a small 5 PM ritual: ears covered, mirror turned to the wall, face away from the street.</p></div>
+    <div class="card"><h3>Kiriyama</h3><p>A mountain valley town on the sea, one train line, rice fields. Orange curve mirrors on every corner, Showa loudspeakers on poles, the 1964 radio tower with a blinking red light, a lone vending machine, a railway crossing.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Hidden detail for rewatches</h2>
+  <p>In shot 04, Sam passes a shop window. His reflection is half a second late. Nobody will catch it the first time. The comments will.</p>
+</section>
+
+<section>
+  <h2>How it gets made</h2>
+  <ol class="steps">
+    <li><b>One world, one look.</b> The town, the mirror world and every character are built and animated together, so nothing looks pasted on. Ink lines, flat cel colour with one shadow tone, painted skies, soft depth of field, and the one red accent.</li>
+    <li><b>Real animation, not slides.</b> Animation on twos, held on threes for weight, smears on fast moves. Hair, hoodie strings, bag, leaves and crows all have follow-through. Every human move is checked against real reference footage first, so hands and limbs stay right.</li>
+    <li><b>Hardest shots first.</b> Shots 08 (the frozen-town fly-through) and 15 (the Listener) get built first as 2-second tests. You see them as full-quality clips and full-size PNGs before anything else is made.</li>
+    <li><b>Shot by shot.</b> Each shot comes to you as its own clip plus PNGs. Nothing gets cut together until you've passed it.</li>
+    <li><b>Sound last.</b> Once all 18 shots are approved, the voices are recorded, then the piano score is written, mixed around the lines.</li>
+  </ol>
+</section>
+</div>
+
+<script>
+// tiny storyboard sketches, drawn in code (layout only, not the final look)
+var D={};(function(){
+const W=270,H=480,INK='#1d1418',RED='#e2402f';
+function sky(g,day){const gr=g.createLinearGradient(0,0,0,H);if(day){gr.addColorStop(0,'#f6b46a');gr.addColorStop(.55,'#f08a55');gr.addColorStop(1,'#7c3f4f')}else{gr.addColorStop(0,'#0b1022');gr.addColorStop(1,'#2a3a66')}g.fillStyle=gr;g.fillRect(0,0,W,H)}
+function mts(g,y,c){g.fillStyle=c;g.beginPath();g.moveTo(0,y+30);g.lineTo(60,y-20);g.lineTo(110,y+10);g.lineTo(170,y-45);g.lineTo(230,y);g.lineTo(270,y-15);g.lineTo(270,H);g.lineTo(0,H);g.fill()}
+function sun(g,x,y,r){g.fillStyle='#ffe0a8';g.beginPath();g.arc(x,y,r,0,7);g.fill()}
+function person(g,x,y,s,c,head){c=c||INK;g.fillStyle=c;g.beginPath();g.arc(x,y-34*s,7*s,0,7);g.fill();g.beginPath();g.moveTo(x-9*s,y-26*s);g.lineTo(x+9*s,y-26*s);g.lineTo(x+7*s,y);g.lineTo(x-7*s,y);g.fill();if(head){g.fillStyle=head;g.beginPath();g.arc(x,y-34*s,7*s,0,7);g.fill()}}
+function pole(g,x){g.fillStyle=INK;g.fillRect(x-3,40,6,H)}
+function mirror(g,x,y,r,inside){g.fillStyle=RED;g.fillRect(x-3,y+r,6,H);g.save();g.beginPath();g.arc(x,y,r,0,7);g.clip();inside(g);g.restore();g.strokeStyle='#f0a050';g.lineWidth=7;g.beginPath();g.arc(x,y,r,0,7);g.stroke()}
+function ground(g,y,c){g.fillStyle=c;g.fillRect(0,y,W,H-y)}
+function crows(g,n,y0,spread){g.strokeStyle=INK;g.lineWidth=2;for(let i=0;i<n;i++){const x=(i*53)%W,y=y0+((i*37)%spread);g.beginPath();g.moveTo(x-6,y-3);g.quadraticCurveTo(x-2,y-6,x,y);g.quadraticCurveTo(x+2,y-6,x+6,y-3);g.stroke()}}
+function leaves(g,n){g.fillStyle='#e0703a';for(let i=0;i<n;i++){const x=(i*71+20)%W,y=(i*113+40)%H;g.save();g.translate(x,y);g.rotate(i);g.fillRect(-4,-2,8,4);g.restore()}}
+D.speaker=g=>{sky(g,1);sun(g,200,170,50);g.fillStyle='#5a3a30';g.beginPath();g.moveTo(40,220);g.lineTo(230,150);g.lineTo(230,330);g.lineTo(40,270);g.fill();g.fillStyle='#2a1a18';g.beginPath();g.ellipse(230,240,30,90,0,0,7);g.fill();g.fillStyle=INK;g.fillRect(20,230,30,250);crows(g,1,140,1)};
+D.mirror=g=>{sky(g,1);mts(g,330,'#5b3446');ground(g,380,'#4a2f33');mirror(g,135,190,95,g=>{sky(g,0);ground(g,250,'#141a30');person(g,135,262,1,'#000')})};
+D.town=g=>{sky(g,1);sun(g,150,250,38);mts(g,260,'#6b3a4c');g.fillStyle=INK;g.fillRect(205,120,5,150);g.fillStyle=RED;g.beginPath();g.arc(207,118,5,0,7);g.fill();ground(g,330,'#3c2a30');g.fillStyle='#2a1d22';for(let i=0;i<7;i++)g.fillRect(i*40,300+(i%3)*12,32,40);g.strokeStyle=INK;g.lineWidth=1.5;g.beginPath();g.moveTo(0,200);g.quadraticCurveTo(135,240,270,190);g.stroke();leaves(g,5)};
+D.bike=g=>{sky(g,1);mts(g,300,'#6b3a4c');ground(g,360,'#3c2a30');g.strokeStyle=INK;g.lineWidth=4;g.beginPath();g.arc(80,400,30,0,7);g.arc(200,400,30,0,7);g.stroke();g.beginPath();g.moveTo(80,400);g.lineTo(140,350);g.lineTo(200,400);g.stroke();person(g,140,345,1.7,'#5c5560');g.fillStyle=INK;g.fillRect(118,268,46,10)};
+D.ritual=g=>{sky(g,1);ground(g,300,'#3c2a30');g.fillStyle='rgba(0,0,0,.35)';g.fillRect(0,158,W,4);g.fillRect(0,318,W,4);person(g,80,140,1.4);g.fillStyle='#c8d0e0';g.fillRect(170,70,40,60);person(g,90,300,1.2);person(g,160,300,1.1);ground(g,320,'#2a1d22');person(g,135,470,1.5)};
+D.phone=g=>{g.fillStyle='#2a1d22';g.fillRect(0,0,W,H);g.fillStyle='#111';g.fillRect(65,90,140,280);g.fillStyle='#f3e9dc';g.font='bold 34px sans-serif';g.textAlign='center';g.fillText('17:00',135,200);g.font='14px sans-serif';g.fillText('3%',180,112)};
+D.notes=g=>{sky(g,1);g.strokeStyle='rgba(255,230,190,.6)';g.lineWidth=2;[60,110,160].forEach(r=>{g.beginPath();g.arc(150,150,r,0,7);g.stroke()});pole(g,150);g.fillStyle='#5a3a30';g.fillRect(150,130,50,30);crows(g,14,40,200)};
+D.frozen=g=>{sky(g,1);ground(g,330,'#3c2a30');person(g,60,330,1.6);person(g,200,300,1.2);person(g,120,250,.9);leaves(g,14);g.fillStyle='#bcd';for(let i=0;i<8;i++)g.fillRect(40+i*4,300+i*7,3,3)};
+D.silence=g=>{g.fillStyle='#3a2a30';g.fillRect(0,0,W,H);g.fillStyle='#e8c8a8';g.beginPath();g.ellipse(135,220,60,75,0,0,7);g.fill();g.fillStyle=INK;g.beginPath();g.ellipse(135,170,70,45,0,Math.PI,0);g.fill();g.strokeStyle=INK;g.lineWidth=10;g.beginPath();g.arc(135,330,60,Math.PI,0,true);g.stroke()};
+D.grandma=g=>{g.fillStyle='#4a2f33';g.fillRect(0,0,W,H);g.fillStyle='#dcb898';g.beginPath();g.ellipse(135,230,70,85,0,0,7);g.fill();g.fillStyle='#ddd';g.beginPath();g.ellipse(135,160,80,45,0,Math.PI,0);g.fill();g.fillStyle=INK;g.beginPath();g.arc(115,225,5,0,7);g.arc(155,225,5,0,7);g.fill()};
+D.crowd=g=>{g.fillStyle='#2a1d22';g.fillRect(0,0,W,H);mirror(g,135,200,110,g=>{sky(g,0);g.strokeStyle='#aac';g.lineWidth=1;g.beginPath();g.moveTo(40,150);g.lineTo(100,170);g.lineTo(130,140);g.lineTo(200,180);g.stroke();ground(g,230,'#141a30');for(let i=0;i<9;i++)person(g,50+i*22,250+(i%2)*10,.7,'#000')});person(g,60,H,2.4,'#111')};
+D.closer=g=>{g.fillStyle='#2a1d22';g.fillRect(0,0,W,H);mirror(g,135,200,110,g=>{sky(g,0);ground(g,200,'#141a30');for(let i=0;i<5;i++)person(g,60+i*38,320,2,'#000')});};
+D.mirrorsam=g=>{g.fillStyle='#2a1d22';g.fillRect(0,0,W,H);mirror(g,135,210,110,g=>{sky(g,0);g.fillStyle='#c8b8b0';g.beginPath();g.ellipse(135,220,50,62,0,0,7);g.fill();g.fillStyle=INK;g.beginPath();g.ellipse(135,180,58,38,0,Math.PI,0);g.fill();g.fillRect(132,232,6,40)})};
+D.fourth=g=>{g.fillStyle='#2a1d22';g.fillRect(0,0,W,H);mirror(g,135,210,110,g=>{sky(g,0)});g.strokeStyle='#fff';g.lineWidth=1.5;for(let i=0;i<9;i++){const a=i*0.7;g.beginPath();g.moveTo(135,210);g.lineTo(135+Math.cos(a)*110,210+Math.sin(a)*110);g.stroke()}};
+D.listener=g=>{sky(g,1);g.fillStyle='#1a1426';g.fillRect(0,60,W,190);g.strokeStyle='#ffe7c0';g.lineWidth=2;g.beginPath();g.moveTo(0,250);g.lineTo(60,240);g.lineTo(100,255);g.lineTo(170,235);g.lineTo(270,250);g.stroke();g.fillStyle='#3a2a2a';for(let i=0;i<16;i++){const a=i/16*Math.PI;g.beginPath();g.moveTo(135,150);g.lineTo(135+Math.cos(a)*90-8,150-Math.sin(a)*90);g.lineTo(135+Math.cos(a)*90+8,150-Math.sin(a)*90);g.fill()}g.fillStyle='#120d18';g.fillRect(195,140,16,120);mts(g,320,'#5b3446');ground(g,400,'#2a1d22');g.fillStyle=INK;g.fillRect(40,180,4,200);g.fillStyle=RED;g.beginPath();g.arc(42,178,5,0,7);g.fill();person(g,135,470,1)};
+D.okaeri=g=>{sky(g,1);ground(g,300,'#3c2a30');for(let i=0;i<6;i++)person(g,40+i*38,330+(i%2)*30,1.4);g.fillStyle='#f3e9dc';g.font='bold 18px sans-serif';g.save();g.scale(-1,1);g.fillText('TABAKO',-230,90);g.restore();leaves(g,6)};
+D.wrongside=g=>{g.fillStyle='#141a30';g.fillRect(0,0,W,H);mirror(g,135,200,110,g=>{sky(g,1);ground(g,240,'#4a2f33');g.fillStyle='#2a1d22';g.fillRect(110,170,60,70);person(g,140,240,1.2,'#3a2a30')});person(g,70,H,2.6,'#000');g.fillStyle='#c8b8b0';g.fillRect(150,240,26,30)};
+D.notebook=g=>{g.fillStyle='#120e12';g.fillRect(0,0,W,H);g.fillStyle='#e9dcc2';g.fillRect(40,90,190,300);g.strokeStyle='#a89';g.lineWidth=1;for(let y=120;y<380;y+=22){g.beginPath();g.moveTo(50,y);g.lineTo(220,y);g.stroke()}g.fillStyle='#120e12';g.beginPath();g.moveTo(40,260);for(let x=40;x<=230;x+=10)g.lineTo(x,250+((x/10)%2)*10);g.lineTo(230,300);g.lineTo(40,300);g.fill();g.fillStyle=INK;g.font='16px serif';g.fillText('7.  ~~~~~~~~',60,330)};
+})();
+</script>
+<script>
+const S=[
+ {n:'01',name:'The speaker',t:[0,3],act:'Cold open',draw:'speaker',
+  cam:'Extreme close-up, locked off. A slow push in (2%).',
+  move:'A rusted loudspeaker horn on a pole, glowing orange. A crow lands on top and its weight makes the horn wobble. The crow ruffles its feathers. Dust drifts through the sun beam. The speaker clicks and you hear static breath.',
+  wow:'The crow landing has real weight: the claws grip, the wings fold in two beats, the feathers settle.'},
+ {n:'02',name:'The mirror',t:[3,6],act:'Cold open',draw:'mirror',
+  cam:'Medium shot of an orange curve mirror at a crossroads, sunset behind it.',
+  move:'The street around the mirror is golden 4:59 PM. Inside the mirror it is the middle of the night, and someone is standing in the road, small and still. A leaf blows across the frame, and in the mirror the same leaf blows the other way.',
+  wow:'The hook in 3 seconds: day outside, night inside, wrong-way leaf.'},
+ {n:'03',name:'Kiriyama',t:[6,9.5],act:'Act 1 · An ordinary day',draw:'town',
+  cam:'Wide establishing shot with a slow crane down. 6 layers of parallax: sky, mountains, the 1964 radio tower, rooftops, power lines, foreground leaves.',
+  move:'Sun sinking behind the mountain, clouds slowly drifting, a two-car train sliding across the valley, the crossing bars lowering, laundry swaying, the tower\'s red light blinking.',
+  wow:'Light that moves: the shadow of the mountain creeps across the rice fields during the shot.'},
+ {n:'04',name:'Sam rides home',t:[9.5,13.5],act:'Act 1 · An ordinary day',draw:'bike',
+  cam:'Tracking side-on alongside Sam, then he overtakes the camera. Low angle.',
+  move:'Sam coasting downhill on a bike, headphones on, mouthing the lyrics, the konbini bag swinging off the handlebar, hoodie and hair whipping, wheel spokes blurred, power-line shadows flicking over him. He passes a shop window.',
+  wow:'Full character animation with follow-through on every loose thing. Hidden detail: his reflection in the shop window is half a second late.'},
+ {n:'05',name:'The ritual',t:[13.5,17],act:'Act 1 · An ordinary day',draw:'ritual',
+  cam:'Three fast cuts on the beat, about 1.1 s each.',
+  move:'(a) Grandma Hoshino stops sweeping and turns her shop\'s little mirror to face the wall. (b) Two kids stop running and press their hands over their ears. (c) The shopkeeper drops his shutter and turns his back to the street. They all glance at the same clock.',
+  wow:'The first sign the town knows something. All three move in sync without seeing each other.'},
+ {n:'06',name:'4:59',t:[17,19],act:'Act 1 · An ordinary day',draw:'phone',
+  cam:'Insert shot over Sam\'s shoulder onto his phone on the handlebar.',
+  move:'The clock flips 16:59 to 17:00. Battery 3%. His thumb skips a song. He has no idea.',
+  wow:'The clock flip lands exactly on the first chime note in the next shot.'},
+ {n:'07',name:'Three notes',t:[19,23.5],act:'Act 2 · Three notes',draw:'notes',
+  cam:'Low angle up at the loudspeaker pole against a huge sunset sky.',
+  move:'Note one: a hundred crows lift off the wires in a wave. Note two: the wave rolls across the town. Note three: the sound ripples through the clouds. Then the fourth note should come, and it doesn\'t. The horn keeps vibrating in silence.',
+  wow:'You see the sound: the crows and clouds move in rings, and each ring is one note.'},
+ {n:'08',name:'The frozen town',t:[23.5,28.5],act:'Act 2 · Three notes',draw:'frozen',
+  cam:'One continuous flying shot through the street at walking height, weaving between people. The camera is the only thing moving.',
+  move:'Everything stops mid-motion. Leaves hang in the air. A kid is frozen mid-jump. Water from Grandma\'s watering can hangs as droplets. A crow is fixed mid-flap. Steam from the vending machine stops. The camera glides through it all and ends on Sam, still riding.',
+  wow:'The signature shot of the episode. Built first as a test.'},
+ {n:'09',name:'Silence',t:[28.5,31.5],act:'Act 2 · Three notes',draw:'silence',
+  cam:'Close-up on Sam, then he brakes into a medium shot.',
+  move:'His music cuts out: battery 0%. He pulls the headphones down to his neck. Total silence, just the bike chain ticking as it coasts. He looks around and frowns.',
+  wow:'The audio drops to nothing. The quietest moment of the reel.'},
+ {n:'10',name:'Grandma\'s eyes',t:[31.5,35],act:'Act 2 · Three notes',draw:'grandma',
+  cam:'Sam walks his bike past Grandma Hoshino, frozen. Slow push in on her face.',
+  move:'Her body is completely still, but her eyes slide to follow him. Her lips don\'t move when she speaks.',
+  wow:'Only the eyes move, a few pixels, and it is the scariest thing so far.'},
+ {n:'11',name:'In the mirror',t:[35,38.5],act:'Act 2 · Three notes',draw:'crowd',
+  cam:'Over Sam\'s shoulder into the curve mirror, slow push.',
+  move:'In the mirror it is night. The whole town is standing in the street, every face turned toward him. Behind them, the sky over the mountains is cracked like glass and something huge is moving behind it.',
+  wow:'The convex mirror bends the crowd and the street into a fisheye world.'},
+ {n:'12',name:'Closer',t:[38.5,42],act:'Act 2 · Three notes',draw:'closer',
+  cam:'Whip-pan to the real street, then whip back to the mirror.',
+  move:'The real street: sunset, frozen people, nobody looking at him. Back to the mirror: the crowd is now much closer, filling the glass.',
+  wow:'Classic horror beat timed to a whip-pan with motion smear frames.'},
+ {n:'13',name:'Mirror-Sam',t:[42,45],act:'Act 3 · The answer',draw:'mirrorsam',
+  cam:'Close-up of the mirror, Sam\'s face in it.',
+  move:'Sam turns his head. His reflection doesn\'t. It keeps looking at him, smiles slowly, and lifts a finger to its lips.',
+  wow:'Two versions of the same character animated against each other, a half beat apart.'},
+ {n:'14',name:'The fourth note',t:[45,48.5],act:'Act 3 · The answer',draw:'fourth',
+  cam:'Extreme close-up on mirror-Sam\'s mouth, then a hard cut wide.',
+  move:'Mirror-Sam breathes in and hums the fourth note. Every loudspeaker in town plays it, but the sound comes from inside the mirrors. Every curve mirror in Kiriyama cracks outward in a ring at the same moment.',
+  wow:'The crack runs through the glass in a few hand-timed frames, with glints.'},
+ {n:'15',name:'The Listener',t:[48.5,53],act:'Act 3 · The answer',draw:'listener',
+  cam:'Huge wide from Sam\'s eye level, then a slow tilt up. The scale shot.',
+  move:'The sky over the mountain splits along the horizon. Clouds pour toward the crack. A hand the size of the mountain presses through from the other side, and behind it rises a head made of hundreds of rusted loudspeaker horns. They all turn toward Kiriyama at once. The radio tower\'s red light bends toward the crack.',
+  wow:'The kaiju reveal. Built second as a test. Scale, weather and light all animate.'},
+ {n:'16',name:'Welcome home',t:[53,56],act:'Act 3 · The answer',draw:'okaeri',
+  cam:'Sam\'s point of view down the street.',
+  move:'The town unfreezes all at once: leaves fall, the kid lands, the water splashes. But every shop sign is now written backwards. Everyone turns to Sam and smiles together.',
+  wow:'One frame changes the whole world: mirrored signs, and Grandma\'s part has flipped too.'},
+ {n:'17',name:'The wrong side',t:[56,59],act:'Act 3 · The answer',draw:'wrongside',
+  cam:'Sam backs into a curve mirror. Close two-shot: Sam and the glass.',
+  move:'In the glass is the real Kiriyama: sunset, normal, warm. His mother is on their doorstep, calling his name, looking for him. She can\'t see him. He presses a hand to the mirror.',
+  wow:'The twist: he was never in the real town after 5:00. His mother is on the other side now.'},
+ {n:'18',name:'Rule seven',t:[59,63],act:'Stinger',draw:'notebook',
+  cam:'Top-down insert on an old police notebook, then black.',
+  move:'Officer Tanaka\'s rules notebook, with rule 7 torn out. Under the tear, new ink writes itself, in Sam\'s own handwriting. Cut to black. The chime plays three notes, then nothing.',
+  wow:'Ends on the question that hooks episode 2.'}
+];
+const LINES=[
+ [0.4,'01-02','Narrator','Every town in Japan plays a song at five o\'clock. Ours has four notes.','Deep, warm, unhurried. Close to the mic, like he\'s telling you a secret.','n'],
+ [6.3,'03','Narrator','It has played every day since 1964. Nobody ever asked why.','Same, with a smile you can hear.','n'],
+ [14.2,'05','Grandma Hoshino','Ears. Quickly.','Sharp whisper to the kids.',''],
+ [29.8,'09','Sam','...Hello?','Small, half laughing, unsure.',''],
+ [32.4,'10','Grandma Hoshino','Don\'t look at the mirror, Sam.','Whisper with no lip movement, very close.',''],
+ [43.0,'13','Sam','That\'s not me.','Barely voiced, breath catching.',''],
+ [44.4,'13','Mirror-Sam','Your turn.','Sam\'s voice, but drier, closer, a hair lower.','m'],
+ [49.0,'15','Narrator','The fourth note was never ours to play.','Slower, heavier.','n'],
+ [54.0,'16','The whole town','Okaeri, Sam. (Welcome home, Sam.)','Dozens of voices in perfect unison, warm, wrong.','m'],
+ [57.2,'17','Sam','Mom...?','Breaking.',''],
+ [59.5,'18','Narrator','Rule seven. Never finish the song.','Final, almost tender.','n']
+];
+// timeline
+const tl=document.getElementById('tl'),T=63;
+const cols={'Cold open':'#7a3f32','Act 1 · An ordinary day':'#9a5a2c','Act 2 · Three notes':'#5a3d5e','Act 3 · The answer':'#33456d','Stinger':'#2a2a35'};
+S.forEach(s=>{const a=document.createElement('a');a.href='#s'+s.n;a.textContent=s.n;a.style.flex=(s.t[1]-s.t[0]);a.style.background=cols[s.act];a.title=s.n+' '+s.name;tl.appendChild(a)});
+const acts=document.getElementById('acts');let seen={};
+S.forEach(s=>{if(!seen[s.act]){seen[s.act]=0}seen[s.act]+=s.t[1]-s.t[0]});
+Object.entries(seen).forEach(([k,v])=>{const sp=document.createElement('span');sp.style.flex=v;sp.textContent=k;acts.appendChild(sp)});
+// cards
+const main=document.getElementById('shots');let lastAct='';
+const fmt=x=>{const m=Math.floor(x/60),s=(x%60).toFixed(1).padStart(4,'0');return m+':'+s};
+S.forEach(s=>{
+  if(s.act!==lastAct){const h=document.createElement('div');h.className='act';h.textContent=s.act;main.appendChild(h);lastAct=s.act}
+  const el=document.createElement('article');el.className='shot';el.id='s'+s.n;
+  const c=document.createElement('canvas');c.width=270;c.height=480;c.setAttribute('aria-label','Sketch of shot '+s.n);
+  const ls=LINES.filter(l=>l[1].split('-').includes(s.n)||l[1].startsWith(s.n));
+  el.innerHTML=`<div></div><div><h3><span class="num">${s.n}</span>${s.name}<span class="time">${fmt(s.t[0])} to ${fmt(s.t[1])} · ${(s.t[1]-s.t[0]).toFixed(1)} s</span></h3>
+  <div class="lbl">Camera</div><p>${s.cam}</p><div class="lbl">What moves</div><p>${s.move}</p>
+  <p class="wow">${s.wow}</p>${ls.map(l=>`<div class="line ${l[5]}"><span class="who">${l[2]}</span>"${l[3]}"</div>`).join('')}</div>`;
+  el.firstChild.appendChild(c);main.appendChild(el);D[s.draw]&&D[s.draw](c.getContext('2d'));
+});
+// script table
+const tb=document.querySelector('#script tbody');
+LINES.forEach(l=>{const tr=document.createElement('tr');tr.innerHTML=`<td class="t">${fmt(l[0])}</td><td class="t">${l[1]}</td><td>${l[2]}</td><td>"${l[3]}"</td><td class="muted">${l[4]}</td>`;tb.appendChild(tr)});
+</script>

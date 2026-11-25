@@ -1,0 +1,140 @@
+<title>Granite Waves Look Study</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one reading column, stills in a strip, verdict first, evidence after. Slate neutrals with a single signal red taken from the reel's own red jacket. */
+:root{--bg:#f3f3f1;--fg:#1d2024;--mute:#5b6168;--line:#d6d8d6;--card:#fff;--accent:#b3262e;--ok:#2d6a4f;--warn:#9a6700;
+--display:'Fraunces',Georgia,serif;--body:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181b;--fg:#e8eaec;--mute:#9aa1a8;--line:#2d3237;--card:#1d2125;--accent:#ef6a70;--ok:#6fc29a;--warn:#e0b04a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181b;--fg:#e8eaec;--mute:#9aa1a8;--line:#2d3237;--card:#1d2125;--accent:#ef6a70;--ok:#6fc29a;--warn:#e0b04a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+h1{font-family:var(--display);font-size:clamp(28px,6vw,40px);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:22px;margin:0 0 10px;text-wrap:balance}
+p{margin:0 0 10px;max-width:65ch}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 8px}
+.verdict{border-left:3px solid var(--accent);padding:4px 0 4px 16px}
+.verdict p{font-size:18px}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--line)}
+figcaption{font-size:13px;color:var(--mute);margin-top:6px;line-height:1.4}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+li{max-width:65ch}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{font-family:var(--mono);font-size:12px;padding:1px 6px;border:1px solid var(--line);border-radius:3px;white-space:nowrap}
+.tag.ok{color:var(--ok);border-color:var(--ok)}.tag.warn{color:var(--warn);border-color:var(--warn)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+</style>
+
+<main>
+<header>
+<p class="kicker">Night Terror reference study</p>
+<h1>What the Granite Waves reel is, and how much of it we can copy</h1>
+</header>
+
+<section class="verdict">
+<p><strong>Short answer.</strong> It is a hand-drawn 2D vertical anime series (made for phones, 9:16), not 3D. The reel is Episode 5, part 1, "Mentor Zima", of <em>Granite Waves</em> by Tezeze. It looks expensive because of restraint: flat colour, soft blurred painted backgrounds, quiet acting and a very warm, low voice.</p>
+<p><strong>Recommendation.</strong> Copy the look in Blender with Grease Pencil on our existing pencil-sketch pipeline, and cast a real human voice. Both are within reach. Details at the end.</p>
+</section>
+
+<section>
+<h2>Frames from the reel</h2>
+<div class="strip">
+<figure><img src="f1_risk.jpg" alt="Max in profile with a taller figure in black beside him"><figcaption>Soft blurred background, flat skin tones, thin dark outline.</figcaption></figure>
+<figure><img src="f2_refuse.jpg" alt="Max eyes closed holding a blue card"><figcaption>Eyes closed, almost no movement. The acting is in the held pose.</figcaption></figure>
+<figure><img src="f3_exhausting.jpg" alt="Max looking down, bead necklace"><figcaption>Muted palette, one red accent (the jacket).</figcaption></figure>
+<figure><img src="f6_red.jpg" alt="Character in a red lit frame with glowing yellow eyes"><figcaption>Other reel: one saturated colour wash, dark figure, small glow in the eyes.</figcaption></figure>
+<figure><img src="f5_bts.jpg" alt="Side by side: final frame and pencil animatic"><figcaption>Behind the scenes: final frame beside the rough pencil animatic.</figcaption></figure>
+<figure><img src="f4_first.jpg" alt="Dark room with long-haired figure by a door"><figcaption>Season trailer frame: dim room, one dark silhouette. Close to our horror use.</figcaption></figure>
+</div>
+</section>
+
+<section>
+<h2>1. What art form this is</h2>
+<ul>
+<li><strong>Name:</strong> indie 2D anime in a vertical "micro-drama" format. Flat cel-style colour with soft painted backgrounds.</li>
+<li><strong>What gives it the look:</strong> thin dark line art, two or three flat tones per surface, a desaturated palette with one accent colour, backgrounds blurred to fake lens depth, a light grain-free film grade, and subtitles burned in near the lower third.</li>
+<li><strong>Motion style:</strong> very limited. Long held poses, small head turns, eyelid and hair movement. This is why it looks smooth and costly while being cheap to make.</li>
+</ul>
+</section>
+
+<section>
+<h2>2. The channel</h2>
+<ul>
+<li><strong>Account:</strong> granitewavesseries, 1.2M followers, verified, 98 posts. Creator account: tezeze_art, 630K followers.</li>
+<li><strong>Funding and release:</strong> Ryuu, a phone streaming app, funded the whole first season. Instagram is the trailer feed.</li>
+<li><strong>Other reels (views shown on the grid):</strong> the season welcome reel, 58.5M. A "Final vs animatic" behind-the-scenes reel for Ep 2 "Scenic route". "Where is your soul?" character reel. Several others between 0.7M and 15M. This reel: 933K views, 44.8K likes.</li>
+<li><strong>Same publisher, sibling series:</strong> Infinit and Sonnenlied, same app, same format, same credit style.</li>
+</ul>
+</section>
+
+<section>
+<h2>3. How it is probably made</h2>
+<div class="note">
+<p><strong>Confidence.</strong> I could not find a "making of" post naming their software, and a web search found nothing. Everything about tools below is inference from what is on screen and from the behind-the-scenes reel. Treat it as likely, not confirmed.</p>
+</div>
+<div class="tbl"><table>
+<tr><th>Part</th><th>What I see</th><th>Likely method</th></tr>
+<tr><td>Workflow</td><td>Rough pencil animatic beside final frames (BTS reel)</td><td>Storyboard, then pencil animatic for timing, then clean line and colour per shot</td></tr>
+<tr><td>Line</td><td>Thin, even, dark brown-grey line, tapered at corners</td><td>Digital inking on tablet, or vector-style brush</td></tr>
+<tr><td>Colour</td><td>Flat fills, one shadow tone, one accent colour per scene</td><td>Cel fills with a single multiply shadow layer</td></tr>
+<tr><td>Light</td><td>Cool grey overall, warm skin, soft gradient shadow over the face</td><td>Overlay gradient layers and a colour grade in compositing</td></tr>
+<tr><td>Backgrounds</td><td>Painted, strongly blurred, windows and buildings readable but soft</td><td>Painted or photo-based background plus gaussian blur for depth</td></tr>
+<tr><td>Frame rate</td><td>Smooth head moves, lots of holds</td><td>Not measured. Typical for this style is 12 to 24 fps with holds on twos or threes.</td></tr>
+<tr><td>Sound</td><td>Dialogue, subtitles on screen, licensed track "Punish Me" by Matt Lange (credited on other reels)</td><td>Real recorded VA, music bed under it</td></tr>
+</table></div>
+</section>
+
+<section>
+<h2>4. The voice, measured</h2>
+<div class="note">
+<p><strong>What I could and could not do.</strong> I cannot listen to audio. I measured the reel's sound inside the browser: pitch, loudness and brightness every few tenths of a second. Music and voice are mixed, so low pitch numbers can include the music's bass. Treat the numbers as a guide.</p>
+</div>
+<div class="tbl"><table>
+<tr><th>Trait</th><th>Reading</th><th>Meaning</th></tr>
+<tr><td>Pitch</td><td class="n">about 70 to 105 Hz</td><td>Low male voice, mostly 80 to 95 Hz. Deep and calm.</td></tr>
+<tr><td>Warmth</td><td class="n">60 to 90% of energy under 250 Hz</td><td>Very warm and dark, close-mic proximity boost.</td></tr>
+<tr><td>Brightness</td><td class="n">centre 200 to 450 Hz, almost nothing above 6 kHz</td><td>Highs rolled off. Soft, intimate, no hiss or sparkle.</td></tr>
+<tr><td>Loudness</td><td class="n">lines peak at 0.17 to 0.29, tails fall to 0.02 to 0.06</td><td>Strong start, then the voice trails off. Tired, weary delivery that fits "very exhausting".</td></tr>
+<tr><td>Pacing</td><td class="n">lines of 1.5 to 3 s, gaps of 1 to 3 s</td><td>Slow, with long pauses. Silence is part of the acting.</td></tr>
+<tr><td>Room</td><td>No audible echo in the readings</td><td>Dry booth sound, minimal reverb.</td></tr>
+</table></div>
+<p>I cannot tell the accent from numbers. The captions are plain English.</p>
+<p><strong>Real actor or synthetic?</strong> Evidence points to real human actors. The channel credits a named professional voice actor on Ep 2 (Sarah Natochenny), has story highlights titled "VAs" and "VA tutorial", and a sibling series credits a VA and a sound designer by handle. The Ep 5 reel does not name its voice. I cannot prove it by audio alone.</p>
+</section>
+
+<section>
+<h2>5. Can we reproduce it for Night Terror?</h2>
+<div class="tbl"><table>
+<tr><th>Piece</th><th>Verdict</th><th>How</th></tr>
+<tr><td>Flat cel colour and thin line</td><td><span class="tag ok">Yes</span></td><td>Blender Grease Pencil on our pencil-sketch pipeline. Toon-style fills, one shadow tone, line thickness set by pressure curve.</td></tr>
+<tr><td>Blurred depth background</td><td><span class="tag ok">Yes</span></td><td>Background on its own layer, defocus or gaussian in the compositor, light vignette.</td></tr>
+<tr><td>One accent colour, cold grade</td><td><span class="tag ok">Yes</span></td><td>Colour balance node. Pick one accent per scene, such as red for danger.</td></tr>
+<tr><td>Held-pose acting at a smooth feel</td><td><span class="tag warn">Needs drawing</span></td><td>Animate on twos, hold long, move only eyes, hair and breath. Needs hand-drawn key poses so it does not look generated.</td></tr>
+<tr><td>Subtitles</td><td><span class="tag ok">Yes</span></td><td>Large bold sans, white, soft shadow, lower third.</td></tr>
+<tr><td>Voice</td><td><span class="tag warn">Needs a person</span></td><td>See below.</td></tr>
+</table></div>
+<h2 style="margin-top:20px">Voice recipe</h2>
+<ul>
+<li><strong>Cast a real person</strong> with a low, tired, close-mic voice. You asked for outputs that never look or sound AI-made, and the reel's voice is real acting.</li>
+<li><strong>Direction:</strong> speak quietly, start lines with a little weight, let them fade. Leave a second of silence between lines.</li>
+<li><strong>Recording:</strong> close to the mic (about 10 cm), pop filter, quiet small room or blankets, no reverb.</li>
+<li><strong>Mix:</strong> cut below 70 Hz, gentle lift around 150 to 250 Hz, roll off above 6 to 8 kHz, light compression, no reverb, music ducked 8 to 10 dB under the lines.</li>
+</ul>
+</section>
+
+<section>
+<h2>Recommendation</h2>
+<ul>
+<li>Build one test shot first: a character in profile, held pose, blurred window background, one red accent, with a real voice line. Compare it to frame 1 above.</li>
+<li>Keep key poses hand-drawn and use Blender for fills, camera, blur and grade.</li>
+<li>Keep motion small and holds long. That is the main secret of this look.</li>
+<li>Do not copy their characters, logo or title design. Use the technique only.</li>
+</ul>
+</section>
+</main>
